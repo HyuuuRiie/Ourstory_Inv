@@ -6,7 +6,7 @@ import { faqs } from "@/constants/Index";
 import { useState } from "react";
 
 const Faq = () => {
-  const [openFAQ, setOpenFAQ] = useState(null);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   return (
     <section id="faq" className="py-20 bg-gradient-to-br from-pink-50 to-rose-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
