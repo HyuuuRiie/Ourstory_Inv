@@ -2,29 +2,11 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, ShoppingCart } from "lucide-react";
-import { themes, handleWhatsAppOrder } from "@/constants/Index";
+import { themes, handleWhatsAppOrder, themeCategories, ThemeCategory } from "@/constants/Index";
 import { useState } from "react";
 import Image from "next/image";
 
 const Service = () => {
-  type ThemeCategory =
-    | 'floral'
-    | 'traditional'
-    | 'minimalist'
-    | 'luxury'
-    | 'elegant'
-    | 'islamic'
-    | 'shadow'
-    | 'others';
-
-  type Theme = {
-    name: string;
-    originalPrice: number;
-    discount: number;
-    finalPrice: number;
-    image: string;
-    src: string;
-  };
   const [activeCategory, setActiveCategory] = useState<ThemeCategory>('floral');
   return (
     <section id="service" className="py-20 bg-gradient-to-br from-pink-50 to-rose-50">
@@ -47,16 +29,7 @@ const Service = () => {
 
         {/* Category Tabs */}
         <div className="flex flex-wrap justify-center mb-12 gap-4">
-          {[
-            { key: 'floral', label: 'Floral' },
-            { key: 'traditional', label: 'Tradisional' },
-            { key: 'minimalist', label: 'Minimalis' },
-            { key: 'luxury', label: 'Luxury' },
-            { key: 'elegant', label: 'Elegant' },
-            { key: 'islamic', label: 'Islamic' },
-            { key: 'shadow', label: 'Overlay Shadow' },
-            { key: 'others', label: 'Tema Lainnya' }
-          ].map((category) => (
+          {themeCategories.map((category) => (
             <motion.button
               key={category.key}
               onClick={() => setActiveCategory(category.key)}

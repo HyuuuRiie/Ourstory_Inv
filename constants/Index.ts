@@ -14,7 +14,37 @@ export const handleWhatsAppOrder = (themeName = '') => {
     
     window.open(`https://wa.me/6289627539374?text=${encodeURIComponent(message)}`, '_blank');
   };
-export const themes = {
+export type ThemeCategory =
+  | 'floral'
+  | 'traditional'
+  | 'minimalist'
+  | 'luxury'
+  | 'elegant'
+  | 'islamic'
+  | 'shadow'
+  | 'others';
+
+type Theme = {
+    name: string;
+    originalPrice: number;
+    discount: number;
+    finalPrice: number;
+    image: string;
+    src: string;
+  };
+
+export const themeCategories: { key: ThemeCategory; label: string }[] = [
+  { key: 'floral', label: 'Floral' },
+  { key: 'traditional', label: 'Tradisional' },
+  { key: 'minimalist', label: 'Minimalis' },
+  { key: 'luxury', label: 'Luxury' },
+  { key: 'elegant', label: 'Elegant' },
+  { key: 'islamic', label: 'Islamic' },
+  { key: 'shadow', label: 'Overlay Shadow' },
+  { key: 'others', label: 'Tema Lainnya' }
+];
+
+export const themes: Record<ThemeCategory, Theme[]> = {
     floral: [
       {
         name: 'Floral 1',
