@@ -7,7 +7,25 @@ import { useState } from "react";
 import Image from "next/image";
 
 const Service = () => {
-  const [activeCategory, setActiveCategory] = useState('floral');
+  type ThemeCategory =
+    | 'floral'
+    | 'traditional'
+    | 'minimalist'
+    | 'luxury'
+    | 'elegant'
+    | 'islamic'
+    | 'shadow'
+    | 'others';
+
+  type Theme = {
+    name: string;
+    originalPrice: number;
+    discount: number;
+    finalPrice: number;
+    image: string;
+    src: string;
+  };
+  const [activeCategory, setActiveCategory] = useState<ThemeCategory>('floral');
   return (
     <section id="service" className="py-20 bg-gradient-to-br from-pink-50 to-rose-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
