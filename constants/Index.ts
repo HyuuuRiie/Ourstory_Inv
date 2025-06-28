@@ -76,7 +76,7 @@ export const themes: Record<ThemeCategory, Theme[]> = {
         discount: 50,
         finalPrice: 100000,
         image: '/tema/floral-4.jpg',
-        src: 'https://demo.invee.net/?template=floral-4'
+        src: 'https://fadillah-ikmal.invee.net/'
       },
       {
         name: 'Floral 5',
